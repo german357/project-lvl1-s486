@@ -1,3 +1,3 @@
 import readlineSync from 'readline-sync';
 
-export const askName = readlineSync.question;
+export default readlineSync.question;
