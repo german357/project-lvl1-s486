@@ -1,10 +1,10 @@
 {
   "name": "german_sh_hexlet_brain-games_hexlet",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "This is my fist project on hexlet",
   "main": "dist/index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-even": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
