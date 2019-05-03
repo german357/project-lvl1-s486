@@ -4,7 +4,7 @@
   "description": "This is my fist project on hexlet",
   "main": "dist/index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-even": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
