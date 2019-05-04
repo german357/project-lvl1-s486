@@ -1,5 +1,7 @@
 install:
 	npm install
+start3:
+	npx babel-node src/bin/games/brain-gcd.js
 start2:
 	npx babel-node src/bin/games/brain-calc.js
 start1:

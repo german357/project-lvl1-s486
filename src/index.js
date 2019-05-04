@@ -2,34 +2,56 @@ import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
 const request = readlineSync.question;
-const range = 10;
-const randomInt = () => Math.floor(Math.random() * range);
+const randomInt = (start, range) => Math.floor(start + Math.random() * range);
 
 const even = () => {
   const description = 'Answer "yes" if number even otherwise answer "no".\n';
-  const num = randomInt();
+  const num = randomInt(0, 100);
   const correctAnswer = (num % 2) ? 'no' : 'yes';
   return cons(description, cons(num, correctAnswer));
 };
 
 const calc = () => {
   const description = 'What is the result of the expression?\n';
-  const num1 = randomInt();
-  const num2 = randomInt();
-  const num3 = randomInt();
+  const range = 10;
+  const num1 = randomInt(0, range);
+  const num2 = randomInt(0, range);
+  const num3 = randomInt(0, range);
   let correctAnswer;
   let operator = '';
   if (num3 < range / 3) {
-    correctAnswer = String(num1 + num2);
+    correctAnswer = num1 + num2;
     operator += '+';
   } else if (num3 < range * 2 / 3) {
-    correctAnswer = String(num1 - num2);
+    correctAnswer = num1 - num2;
     operator += '-';
   } else {
-    correctAnswer = String(num1 * num2);
+    correctAnswer = num1 * num2;
     operator += '*';
   }
   return cons(description, cons(`${num1} ${operator} ${num2}`, correctAnswer));
+};
+
+const gcd = () => {
+  const description = 'Find the greatest common divisor of given numbers.\n';
+  const greaterNum = randomInt(1, 99);
+  const lowerNum = randomInt(1, greaterNum);
+  let correctAnswer;
+  if (!(greaterNum % lowerNum)) {
+    correctAnswer = lowerNum;
+  } else {
+    const iter = (n, S) => {
+      if (n >= lowerNum / 2) {
+        return S;
+      }
+      if (!(greaterNum % n) && !(lowerNum % n)) {
+        return iter(n + 1, n);
+      }
+      return iter(n + 1, S);
+    };
+    correctAnswer = iter(1, 1);
+  }
+  return cons(description, cons(`${lowerNum} ${greaterNum}`, correctAnswer));
 };
 
 const game = (kindOfGame) => {
@@ -43,7 +65,7 @@ const game = (kindOfGame) => {
     }
     const pair = kindOfGame();
     const message = car(cdr(pair));
-    const correctAnswer = cdr(cdr(pair));
+    const correctAnswer = String(cdr(cdr(pair)));
     console.log(`Question: ${message}`);
     const answer = request('Your answer: ');
     if (correctAnswer === answer) {
@@ -57,5 +79,5 @@ const game = (kindOfGame) => {
 };
 
 export {
-  request, even, calc, game,
+  request, even, calc, game, gcd,
 }; // export default неправильно проходит через babel.
