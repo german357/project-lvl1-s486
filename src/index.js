@@ -13,7 +13,7 @@ const even = () => {
 
 const calc = () => {
   const description = 'What is the result of the expression?\n';
-  const range = 10;
+  const range = 20;
   const num1 = randomInt(0, range);
   const num2 = randomInt(0, range);
   const num3 = randomInt(0, range);
@@ -54,6 +54,25 @@ const gcd = () => {
   return cons(description, cons(`${lowerNum} ${greaterNum}`, correctAnswer));
 };
 
+const progression = () => {
+  const description = 'What number is missing in the progression?\n';
+  const a0 = randomInt(0, 20);
+  const d = randomInt(0, 10);
+  const numOfElements = 10;
+  const positionHiddenItem = randomInt(1, numOfElements - 1);
+  let correctAnswer;
+  const iter = (n, S) => {
+    if (n > numOfElements) return S;
+    const an = a0 + (n - 1) * d;
+    if (n === positionHiddenItem) {
+      correctAnswer = an;
+      return iter(n + 1, `${S}.. `);
+    }
+    return iter(n + 1, `${S}${an} `);
+  };
+  return cons(description, cons(iter(1, ''), correctAnswer));
+};
+
 const game = (kindOfGame) => {
   console.log(`Welcome to the Brain Games!\n${car(kindOfGame())}\n`);
   const name = request('May I have your name? ');
@@ -79,5 +98,5 @@ const game = (kindOfGame) => {
 };
 
 export {
-  request, even, calc, game, gcd,
+  request, even, calc, game, gcd, progression,
 }; // export default неправильно проходит через babel.
