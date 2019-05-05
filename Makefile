@@ -1,5 +1,7 @@
 install:
 	npm install
+start5:
+	npx babel-node src/bin/games/brain-prime.js
 start4:
 	npx babel-node src/bin/games/brain-progression.js
 start3:
