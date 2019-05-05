@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
 const request = readlineSync.question;
-const randomInt = (start, range) => Math.floor(start + Math.random() * range);
+const randomInt = (start, interval) => Math.floor(start + Math.random() * interval);
 
 const even = () => {
   const description = 'Answer "yes" if number even otherwise answer "no".\n';
@@ -13,21 +13,24 @@ const even = () => {
 
 const calc = () => {
   const description = 'What is the result of the expression?\n';
-  const range = 20;
-  const num1 = randomInt(0, range);
-  const num2 = randomInt(0, range);
-  const num3 = randomInt(0, range);
+  const interval = 20;
+  const num1 = randomInt(0, interval);
+  const num2 = randomInt(0, interval);
+  const choiceOperator = randomInt(0.5, 3);
   let correctAnswer;
   let operator = '';
-  if (num3 < range / 3) {
-    correctAnswer = num1 + num2;
-    operator += '+';
-  } else if (num3 < range * 2 / 3) {
-    correctAnswer = num1 - num2;
-    operator += '-';
-  } else {
-    correctAnswer = num1 * num2;
-    operator += '*';
+  switch (choiceOperator) {
+    case 1:
+      correctAnswer = num1 + num2;
+      operator += '+';
+      break;
+    case 2:
+      correctAnswer = num1 - num2;
+      operator += '-';
+      break;
+    default:
+      correctAnswer = num1 * num2;
+      operator += '*';
   }
   return cons(description, cons(`${num1} ${operator} ${num2}`, correctAnswer));
 };
@@ -40,14 +43,14 @@ const gcd = () => {
   if (!(greaterNum % lowerNum)) {
     correctAnswer = lowerNum;
   } else {
-    const iter = (n, S) => {
-      if (n >= lowerNum / 2) {
-        return S;
+    const iter = (count, acc) => {
+      if (count > lowerNum / 2) {
+        return acc;
       }
-      if (!(greaterNum % n) && !(lowerNum % n)) {
-        return iter(n + 1, n);
+      if (!(greaterNum % count) && !(lowerNum % count)) {
+        return iter(count + 1, count);
       }
-      return iter(n + 1, S);
+      return iter(count + 1, acc);
     };
     correctAnswer = iter(1, 1);
   }
@@ -56,19 +59,22 @@ const gcd = () => {
 
 const progression = () => {
   const description = 'What number is missing in the progression?\n';
-  const a0 = randomInt(0, 20);
+  /*  The initial term of an arithmetic progression: a1
+  common difference of successive members: d
+  nth term of the sequence: an = a0 + (n - 1) * d */
+  const a1 = randomInt(0, 20);
   const d = randomInt(0, 10);
-  const numOfElements = 10;
-  const positionHiddenItem = randomInt(1, numOfElements - 1);
+  const amountOfElements = 10;
+  const positionOfMissingItem = randomInt(1, amountOfElements - 1);
   let correctAnswer;
-  const iter = (n, S) => {
-    if (n > numOfElements) return S;
-    const an = a0 + (n - 1) * d;
-    if (n === positionHiddenItem) {
+  const iter = (count, acc) => {
+    if (count > amountOfElements) return acc;
+    const an = a1 + (count - 1) * d;
+    if (count === positionOfMissingItem) {
       correctAnswer = an;
-      return iter(n + 1, `${S}.. `);
+      return iter(count + 1, `${acc}.. `);
     }
-    return iter(n + 1, `${S}${an} `);
+    return iter(count + 1, `${acc}${an} `);
   };
   return cons(description, cons(iter(1, ''), correctAnswer));
 };
@@ -90,7 +96,7 @@ const game = (kindOfGame) => {
   const name = request('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
 
-  const f = (count) => {
+  const launch = (count) => {
     if (!count) {
       return `Congratulations, ${name}!`;
     }
@@ -101,12 +107,12 @@ const game = (kindOfGame) => {
     const answer = request('Your answer: ');
     if (correctAnswer === answer) {
       console.log('Correct!');
-      return f(count - 1);
+      return launch(count - 1);
     }
     return `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`;
   };
 
-  return f(3);
+  return launch(3);
 };
 
 export {
