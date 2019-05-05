@@ -1,7 +1,13 @@
 {
   "name": "german_sh_hexlet_brain-games_hexlet",
-  "version": "1.6.0",
-  "description": "This is my fist project on hexlet",
+  "version": "1.7.0",
+  "description": "Brain-games project",
+  "keywords": [
+    "brain-games",
+    "German Shafikov",
+    "games",
+    "hexlet"
+  ],
   "main": "dist/index.js",
   "bin": {
     "brain-even": "dist/bin/games/brain-even.js",
