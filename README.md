@@ -17,4 +17,8 @@ $ brain-calc
 $ brain-even
 ```
 
-<a href="https://asciinema.org/a/244482" target="_blank"><img src="https://asciinema.org/a/244482.svg" /></a>
+<a href="https://asciinema.org/a/244850" target="_blank"><img src="https://asciinema.org/a/244850.svg" /></a>
+<a href="https://asciinema.org/a/244855" target="_blank"><img src="https://asciinema.org/a/244855.svg" /></a>
+<a href="https://asciinema.org/a/244857" target="_blank"><img src="https://asciinema.org/a/244857.svg" /></a>
+<a href="https://asciinema.org/a/244858" target="_blank"><img src="https://asciinema.org/a/244858.svg" /></a>
+<a href="https://asciinema.org/a/244859" target="_blank"><img src="https://asciinema.org/a/244859.svg" /></a>
