@@ -8,13 +8,12 @@
     "games",
     "hexlet"
   ],
-  "main": "dist/index.js",
   "bin": {
-    "brain-even": "dist/bin/games/brain-even.js",
-    "brain-calc": "dist/bin/games/brain-calc.js",
-    "brain-gcd": "dist/bin/games/brain-gcd.js",
-    "brain-progression": "dist/bin/games/brain-progression.js",
-    "brain-prime": "dist/bin/games/brain-prime.js"
+    "brain-even": "dist/games/brain-even.js",
+    "brain-calc": "dist/games/brain-calc.js",
+    "brain-gcd": "dist/games/brain-gcd.js",
+    "brain-progression": "dist/games/brain-progression.js",
+    "brain-prime": "dist/games/brain-prime.js"
   },
   "files": [
     "dist"
@@ -27,15 +26,15 @@
   "author": "germansh",
   "license": "ISC",
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.4",
     "eslint-plugin-babel": "^5.3.0",
-    "hexlet-pairs": "^1.0.8",
-    "readline-sync": "^1.4.9"
-  },
-  "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
