@@ -1,6 +1,4 @@
-#!/usr/bin/node
-
-import { game, randomInt } from '..';
+import { randomInt } from '..';
 import { cons } from 'hexlet-pairs';
 
 const even = () => {
@@ -10,4 +8,4 @@ const even = () => {
   return cons(description, cons(num, correctAnswer));
 };
 
-console.log(game(even));
+export default even;

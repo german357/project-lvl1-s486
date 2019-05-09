@@ -30,4 +30,4 @@ const game = (kindOfGame) => {
 
 export {
   request, randomInt, game,
-}; // export default неправильно проходит через babel.
+};

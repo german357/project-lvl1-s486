@@ -1,6 +1,4 @@
-#!/usr/bin/node
-
-import { game, randomInt } from '..';
+import { randomInt } from '..';
 import { cons } from 'hexlet-pairs';
 
 const prime = () => {
@@ -15,4 +13,4 @@ const prime = () => {
   return cons(description, cons(num, correctAnswer));
 };
 
-console.log(game(prime));
+export default prime;

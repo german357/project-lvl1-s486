@@ -1,6 +1,4 @@
-#!/usr/bin/node
-
-import { game, randomInt } from '..';
+import { randomInt } from '..';
 import { cons } from 'hexlet-pairs';
 
 const calc = () => {
@@ -26,4 +24,4 @@ const calc = () => {
   }
   return cons(description, cons(`${num1} ${operator} ${num2}`, correctAnswer));
 };
-console.log(game(calc));
+export default calc;

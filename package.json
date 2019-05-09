@@ -1,6 +1,6 @@
 {
   "name": "german_sh_hexlet_brain-games_hexlet",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Brain-games project",
   "keywords": [
     "brain-games",
@@ -9,11 +9,11 @@
     "hexlet"
   ],
   "bin": {
-    "brain-even": "dist/games/brain-even.js",
-    "brain-calc": "dist/games/brain-calc.js",
-    "brain-gcd": "dist/games/brain-gcd.js",
-    "brain-progression": "dist/games/brain-progression.js",
-    "brain-prime": "dist/games/brain-prime.js"
+    "brain-even": "dist/bin/launch_game_even.js",
+    "brain-calc": "dist/bin/launch_game_calc.js",
+    "brain-gcd": "dist/bin/launch_game_gcd.js",
+    "brain-progression": "dist/bin/launch_game_progression.js",
+    "brain-prime": "dist/bin/launch_game_prime.js"
   },
   "files": [
     "dist"

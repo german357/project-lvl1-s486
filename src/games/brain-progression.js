@@ -1,6 +1,4 @@
-#!/usr/bin/node
-
-import { game, randomInt } from '..';
+import { randomInt } from '..';
 import { cons } from 'hexlet-pairs';
 
 const progression = () => {
@@ -25,4 +23,4 @@ const progression = () => {
   return cons(description, cons(iter(1, ''), correctAnswer));
 };
 
-console.log(game(progression));
+export default progression;

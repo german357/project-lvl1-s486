@@ -1,6 +1,4 @@
-#!/usr/bin/node
-
-import { game, randomInt } from '..';
+import { randomInt } from '..';
 import { cons } from 'hexlet-pairs';
 
 const gcd = () => {
@@ -25,4 +23,4 @@ const gcd = () => {
   return cons(description, cons(`${lowerNum} ${greaterNum}`, correctAnswer));
 };
 
-console.log(game(gcd));
+export default gcd;
