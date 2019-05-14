@@ -1,8 +1,7 @@
-import { randomInt } from '..';
+import { randomInt, game } from '..';
 import { cons } from 'hexlet-pairs';
 
 const calc = () => {
-  const description = 'What is the result of the expression?\n';
   const interval = 20;
   const num1 = randomInt(0, interval);
   const num2 = randomInt(0, interval);
@@ -22,6 +21,9 @@ const calc = () => {
       correctAnswer = num1 * num2;
       operator += '*';
   }
-  return cons(description, cons(`${num1} ${operator} ${num2}`, correctAnswer));
+  return cons(`${num1} ${operator} ${num2}`, correctAnswer);
 };
-export default calc;
+
+const description = 'What is the result of the expression?';
+
+export default game(description, calc);

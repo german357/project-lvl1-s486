@@ -1,8 +1,7 @@
-import { randomInt } from '..';
+import { randomInt, game } from '..';
 import { cons } from 'hexlet-pairs';
 
 const progression = () => {
-  const description = 'What number is missing in the progression?\n';
   /*  The initial term of an arithmetic progression: a1
   common difference of successive members: d
   nth term of the sequence: an = a0 + (n - 1) * d */
@@ -20,7 +19,9 @@ const progression = () => {
     }
     return iter(count + 1, `${acc}${an} `);
   };
-  return cons(description, cons(iter(1, ''), correctAnswer));
+  return cons(iter(1, ''), correctAnswer);
 };
 
-export default progression;
+const description = 'What number is missing in the progression?';
+
+export default game(description, progression);

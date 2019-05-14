@@ -2,10 +2,11 @@ import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
 const request = readlineSync.question;
+const numberOfCycles = 3;
 const randomInt = (start, interval) => Math.floor(start + Math.random() * interval);
 
-const game = (kindOfGame) => {
-  console.log(`Welcome to the Brain Games!\n${car(kindOfGame())}\n`);
+const game = (description, kindOfGame) => {
+  console.log(`Welcome to the Brain Games!\n${description}\n`);
   const name = request('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
 
@@ -14,8 +15,8 @@ const game = (kindOfGame) => {
       return `Congratulations, ${name}!`;
     }
     const pair = kindOfGame();
-    const message = car(cdr(pair));
-    const correctAnswer = String(cdr(cdr(pair)));
+    const message = car(pair);
+    const correctAnswer = String(cdr(pair));
     console.log(`Question: ${message}`);
     const answer = request('Your answer: ');
     if (correctAnswer === answer) {
@@ -25,7 +26,7 @@ const game = (kindOfGame) => {
     return `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`;
   };
 
-  return launch(3);
+  return launch(numberOfCycles);
 };
 
 export {
