@@ -1,5 +1,10 @@
-import { randomInt, game } from '..';
+import game from '..';
+import randomInt from '../utils';
 import { cons } from 'hexlet-pairs';
+
+/* initial value and interval for random number generation */
+const initialValue = 1;
+const interval = 99;
 
 const gcdFind = (greaterNum, lowerNum) => {
   if (!(greaterNum % lowerNum)) return lowerNum;
@@ -12,10 +17,11 @@ const gcdFind = (greaterNum, lowerNum) => {
 };
 
 const gcd = () => {
-  const greaterNum = randomInt(1, 99);
-  const lowerNum = randomInt(1, greaterNum);
+  const greaterNum = randomInt(initialValue, interval);
+  const lowerNum = randomInt(initialValue, greaterNum);
   const correctAnswer = gcdFind(greaterNum, lowerNum);
-  return cons(`${lowerNum} ${greaterNum}`, correctAnswer);
+  const question = `${lowerNum} ${greaterNum}`;
+  return cons(question, correctAnswer);
 };
 
 const description = 'Find the greatest common divisor of given numbers.';

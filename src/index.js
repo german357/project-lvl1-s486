@@ -3,7 +3,6 @@ import { car, cdr } from 'hexlet-pairs';
 
 const request = readlineSync.question;
 const numberOfCycles = 3;
-const randomInt = (start, interval) => Math.floor(start + Math.random() * interval);
 
 const game = (description, kindOfGame) => {
   console.log(`Welcome to the Brain Games!\n${description}\n`);
@@ -29,6 +28,4 @@ const game = (description, kindOfGame) => {
   return launch(numberOfCycles);
 };
 
-export {
-  request, randomInt, game,
-};
+export default game;

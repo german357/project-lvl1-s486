@@ -1,10 +1,15 @@
-import { randomInt, game } from '..';
+import game from '..';
+import randomInt from '../utils';
 import { cons } from 'hexlet-pairs';
+
+/* initial value and interval for random number generation */
+const initialValue = 0;
+const interval = 100;
 
 const isEven = number => !(number % 2);
 
 const even = () => {
-  const question = randomInt(0, 100);
+  const question = randomInt(initialValue, interval);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };
