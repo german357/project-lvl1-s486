@@ -20,7 +20,7 @@ const constructor = (a1, d, positionOfMissingItem) => {
     if (count === positionOfMissingItem) return iter(count + 1, `${acc}.. `);
     return iter(count + 1, `${acc}${an} `);
   };
-  return iter(1, '');
+  return iter(1, '').trim();
 };
 
 const progression = () => {

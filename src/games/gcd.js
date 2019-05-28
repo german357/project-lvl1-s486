@@ -1,13 +1,14 @@
-import game from '..';
-import randomInt from '../utils';
 import { cons } from 'hexlet-pairs';
+import randomInt from '../utils';
 
 /* initial value and interval for random number generation */
 const initialValue = 1;
 const interval = 99;
 
-const gcdFind = (greaterNum, lowerNum) => {
-  if (!(greaterNum % lowerNum)) return lowerNum;
+const gcdFind = (num1, num2) => {
+  const lowerNum = Math.min(num1, num2);
+  const greaterNum = Math.max(num1, num2);
+  if (greaterNum % lowerNum === 0) return lowerNum;
   const iter = (count, acc) => {
     if (count > lowerNum / 2) return acc;
     if (!(greaterNum % count) && !(lowerNum % count)) return iter(count + 1, count);
@@ -17,10 +18,10 @@ const gcdFind = (greaterNum, lowerNum) => {
 };
 
 const gcd = () => {
-  const greaterNum = randomInt(initialValue, interval);
-  const lowerNum = randomInt(initialValue, greaterNum);
-  const correctAnswer = gcdFind(greaterNum, lowerNum);
-  const question = `${lowerNum} ${greaterNum}`;
+  const num1 = randomInt(initialValue, interval);
+  const num2 = randomInt(initialValue, interval);
+  const correctAnswer = gcdFind(num1, num2);
+  const question = `${num1} ${num2}`;
   return cons(question, correctAnswer);
 };
 

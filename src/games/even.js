@@ -5,7 +5,7 @@ import randomInt from '../utils';
 const initialValue = 0;
 const interval = 100;
 
-const isEven = number => !(number % 2);
+const isEven = number => ((number % 2) === 0);
 
 const even = () => {
   const question = randomInt(initialValue, interval);

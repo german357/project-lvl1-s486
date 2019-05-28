@@ -1,15 +1,14 @@
-import game from '..';
-import randomInt from '../utils';
 import { cons } from 'hexlet-pairs';
+import randomInt from '../utils';
 
 /* initial value and interval for random number generation */
 const initialValue = 0;
 const interval = 100;
 
 const isPrime = (number) => {
-  if (!number || number === 1) return false;
+  if (number <= 1) return false;
   for (let i = 2; i <= number / 2; i += 1) {
-    if (!(number % i)) return false;
+    if (number % i === 0) return false;
   }
   return true;
 };
