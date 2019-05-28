@@ -1,5 +1,6 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
+import game from '..';
 import prime from '../games/prime';
 
-console.log(prime);
+game(prime);

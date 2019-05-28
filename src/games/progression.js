@@ -1,6 +1,5 @@
-import game from '..';
-import randomInt from '../utils';
 import { cons } from 'hexlet-pairs';
+import randomInt from '../utils';
 
 /* initial value and interval for generating initial term of arithmetic progression */
 const initialValue1 = 0;
@@ -35,4 +34,4 @@ const progression = () => {
 
 const description = 'What number is missing in the progression?';
 
-export default game(description, progression);
+export default cons(description, progression);

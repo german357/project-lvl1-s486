@@ -39,4 +39,4 @@ const calc = () => {
 
 const description = 'What is the result of the expression?';
 
-export default game(description, calc);
+export default cons(description, calc);

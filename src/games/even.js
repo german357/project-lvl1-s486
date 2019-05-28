@@ -1,6 +1,5 @@
-import game from '..';
-import randomInt from '../utils';
 import { cons } from 'hexlet-pairs';
+import randomInt from '../utils';
 
 /* initial value and interval for random number generation */
 const initialValue = 0;
@@ -16,4 +15,4 @@ const even = () => {
 
 const description = 'Answer "yes" if number even otherwise answer "no".';
 
-export default game(description, even);
+export default cons(description, even);
