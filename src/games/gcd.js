@@ -6,21 +6,23 @@ const initialValue = 1;
 const interval = 99;
 
 const gcdFind = (num1, num2) => {
-  const lowerNum = Math.min(num1, num2);
-  const greaterNum = Math.max(num1, num2);
-  if (greaterNum % lowerNum === 0) return lowerNum;
-  const iter = (count, acc) => {
-    if (count > lowerNum / 2) return acc;
-    if (!(greaterNum % count) && !(lowerNum % count)) return iter(count + 1, count);
-    return iter(count + 1, acc);
-  };
-  return iter(1, 1);
+  if (num1 === 0 || num2 === 0) return 0;
+  let a = Math.abs(num1);
+  let b = Math.abs(num2);
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
+  }
+  return a;
 };
 
 const gcd = () => {
   const num1 = randomInt(initialValue, interval);
   const num2 = randomInt(initialValue, interval);
-  const correctAnswer = gcdFind(num1, num2);
+  const correctAnswer = String(gcdFind(num1, num2));
   const question = `${num1} ${num2}`;
   return cons(question, correctAnswer);
 };

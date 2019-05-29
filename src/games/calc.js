@@ -30,7 +30,7 @@ const calc = () => {
   const num2 = randomInt(initialValue, interval);
   const operatorNum = randomInt(0.5, 3);
   const expression = constructor(num1, num2, operatorNum);
-  const correctAnswer = car(expression);
+  const correctAnswer = String(car(expression));
   const question = cdr(expression);
   return cons(question, correctAnswer);
 };

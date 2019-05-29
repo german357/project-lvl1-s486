@@ -11,20 +11,20 @@ const game = (description, kindOfGame) => {
 
   const launch = (count) => {
     if (!count) {
-      return console.log(`Congratulations, ${name}!`);
+      return `Congratulations, ${name}!`;
     }
     const unit = kindOfGame();
     const message = car(unit);
-    const correctAnswer = String(cdr(unit));
+    const correctAnswer = cdr(unit);
     console.log(`Question: ${message}`);
     const answer = request('Your answer: ');
     if (correctAnswer === answer) {
       console.log('Correct!');
       return launch(count - 1);
     }
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    return `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`;
   };
-  return launch(numberOfTurns);
+  console.log(launch(numberOfTurns));
 };
 
 export default game;

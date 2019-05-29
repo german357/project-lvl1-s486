@@ -27,7 +27,7 @@ const progression = () => {
   const a1 = randomInt(initialValue1, interval1);
   const d = randomInt(initialValue2, interval2);
   const positionOfMissingItem = randomInt(1, amountOfElements - 1);
-  const correctAnswer = a1 + (positionOfMissingItem - 1) * d;
+  const correctAnswer = String(a1 + (positionOfMissingItem - 1) * d);
   const question = constructor(a1, d, positionOfMissingItem);
   return cons(question, correctAnswer);
 };
