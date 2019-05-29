@@ -15,4 +15,4 @@ const even = () => {
 
 const description = 'Answer "yes" if number even otherwise answer "no".';
 
-export default cons(description, even);
+export { description, even };

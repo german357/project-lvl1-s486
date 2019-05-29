@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 import game from '..';
-import progression from '../games/progression';
+import { progression, description } from '../games/progression';
 
-game(progression);
+game(description, progression);

@@ -4,9 +4,7 @@ import { car, cdr } from 'hexlet-pairs';
 const request = readlineSync.question;
 const numberOfTurns = 3;
 
-const game = (kindOfGame) => {
-  const description = car(kindOfGame);
-  const gameGen = cdr(kindOfGame);
+const game = (description, kindOfGame) => {
   console.log(`Welcome to the Brain Games!\n${description}\n`);
   const name = request('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
@@ -15,7 +13,7 @@ const game = (kindOfGame) => {
     if (!count) {
       return console.log(`Congratulations, ${name}!`);
     }
-    const unit = gameGen();
+    const unit = kindOfGame();
     const message = car(unit);
     const correctAnswer = String(cdr(unit));
     console.log(`Question: ${message}`);

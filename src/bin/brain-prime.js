@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 import game from '..';
-import prime from '../games/prime';
+import { prime, description } from '../games/prime';
 
-game(prime);
+game(description, prime);

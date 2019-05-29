@@ -34,4 +34,4 @@ const progression = () => {
 
 const description = 'What number is missing in the progression?';
 
-export default cons(description, progression);
+export { description, progression };

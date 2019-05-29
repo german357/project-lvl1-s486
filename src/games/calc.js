@@ -37,4 +37,4 @@ const calc = () => {
 
 const description = 'What is the result of the expression?';
 
-export default cons(description, calc);
+export { description, calc };
