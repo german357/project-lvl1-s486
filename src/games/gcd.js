@@ -1,5 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import randomInt from '../utils';
+import game from '..';
 
 /* initial value and interval for random number generation */
 const initialValue = 1;
@@ -29,4 +30,6 @@ const gcd = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-export { description, gcd };
+const launchGame = () => game(description, gcd);
+
+export default launchGame;

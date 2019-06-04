@@ -1,5 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import randomInt from '../utils';
+import game from '..';
 
 /* initial value and interval for random number generation */
 const initialValue = 0;
@@ -37,4 +38,6 @@ const calc = () => {
 
 const description = 'What is the result of the expression?';
 
-export { description, calc };
+const launchGame = () => game(description, calc);
+
+export default launchGame;
