@@ -38,6 +38,4 @@ const calc = () => {
 
 const description = 'What is the result of the expression?';
 
-const launchGame = () => game(description, calc);
-
-export default launchGame;
+export default () => game(description, calc);

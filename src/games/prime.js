@@ -22,6 +22,4 @@ const prime = () => {
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const launchGame = () => game(description, prime);
-
-export default launchGame;
+export default () => game(description, prime);

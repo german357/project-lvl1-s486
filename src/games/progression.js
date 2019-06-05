@@ -35,6 +35,4 @@ const progression = () => {
 
 const description = 'What number is missing in the progression?';
 
-const launchGame = () => game(description, progression);
-
-export default launchGame;
+export default () => game(description, progression);

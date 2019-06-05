@@ -16,6 +16,4 @@ const even = () => {
 
 const description = 'Answer "yes" if number even otherwise answer "no".';
 
-const launchGame = () => game(description, even);
-
-export default launchGame;
+export default () => game(description, even);

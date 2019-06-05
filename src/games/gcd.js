@@ -30,6 +30,4 @@ const gcd = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const launchGame = () => game(description, gcd);
-
-export default launchGame;
+export default () => game(description, gcd);
