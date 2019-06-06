@@ -8,7 +8,11 @@ const game = (description, kindOfGame) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
 
-  for (let i = 0; i < numberOfTurns; i += 1) {
+  const test = (count) => {
+    if (count === 0) {
+      console.log(`Congratulations, ${name}!`);
+      return;
+    }
     const unit = kindOfGame();
     const question = car(unit);
     const correctAnswer = cdr(unit);
@@ -16,12 +20,13 @@ const game = (description, kindOfGame) => {
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {
       console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      test(count - 1);
       return;
     }
-  }
-  console.log(`Congratulations, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  };
+
+  test(numberOfTurns);
 };
 
 export default game;
